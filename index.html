@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#8ed8eb" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌱%3C/text%3E%3C/svg%3E" />
+  <title>Sproutbound — little world, big possibilities</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Sproutbound home"><span class="brand-mark">✿</span><span>sprout<span class="brand-light">bound</span></span></a>
+      <div class="world-title"><span class="live-dot"></span><span>MEADOW ISLAND</span><i>•</i><span id="weather">SUNNY DAY</span></div>
+      <div class="top-actions"><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button><button class="icon-btn" id="helpBtn" aria-label="Help">?</button><button class="avatar-mini" aria-label="Player profile">🌱</button></div>
+    </header>
+    <section class="game-frame" aria-label="Game world">
+      <canvas id="game" aria-label="2D sandbox game"></canvas>
+      <div class="world-overlay">
+        <div class="quest-card"><div class="quest-icon">✦</div><div><small>DAILY LITTLE QUEST</small><strong id="questText">Plant your first seed</strong></div><div class="quest-progress" id="questProgress">0/1</div></div>
+        <div class="world-badge"><span>🌤️</span><div><b>Level <span id="level">1</span></b><small>Meadow explorer</small></div></div>
+        <div class="toast" id="toast" role="status"></div>
+        <div class="controls-hint" id="controlsHint"><kbd>A</kbd><kbd>D</kbd> move <span>·</span> <kbd>SPACE</kbd> jump <span>·</span> <kbd>CLICK</kbd> build</div>
+        <div class="touch-controls" aria-label="Touch controls"><button data-control="left" aria-label="Move left">‹</button><button data-control="right" aria-label="Move right">›</button><button data-control="jump" aria-label="Jump">↑</button></div>
+      </div>
+    </section>
+    <footer class="inventory-bar">
+      <div class="inventory-label"><span class="bag-icon">▦</span><span>YOUR<br><b>POCKETS</b></span></div>
+      <div class="slots" id="slots" role="toolbar" aria-label="Inventory"></div>
+      <div class="inventory-note"><span class="mouse-icon">⌖</span><span><b>Click</b> to dig<br><b>Right-click</b> to place</span></div>
+      <button class="plant-btn" id="plantBtn"><span>🌰</span><b>PLANT SEED</b></button>
+    </footer>
+    <div class="bottom-note"><span>✦</span> A tiny world made for you <span class="bottom-divider">·</span> <span id="saveStatus">All changes saved</span><span class="bottom-spacer"></span><button id="resetBtn">↻ Start a new island</button></div>
+  </main>
+  <dialog id="helpDialog"><div class="dialog-head"><span class="dialog-sparkle">✦</span><button class="close-btn" id="closeHelp" aria-label="Close">×</button></div><h2>Make this place yours.</h2><p>Meadow Island is your little corner of the world. Dig, build, and watch something lovely grow.</p><div class="help-grid"><div><span>🧤</span><b>Dig</b><small>Left-click a block nearby to collect it.</small></div><div><span>🧱</span><b>Build</b><small>Right-click to place the selected block.</small></div><div><span>🌱</span><b>Grow</b><small>Select a seed, then place it on soil.</small></div><div><span>🧭</span><b>Wander</b><small>Use A / D to walk, Space to jump.</small></div></div><button class="primary-btn" id="gotIt">LET'S GROW</button></dialog>
+    <div class="mobile-tip" id="mobileTip">Tap a pocket, then tap the world to build 🌼</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
